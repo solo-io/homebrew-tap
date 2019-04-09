@@ -1,35 +1,38 @@
 class Glooctl < Formula
   desc "Envoy-Powered API Gateway"
   homepage "https://gloo.solo.io"
-  url "https://github.com/solo-io/gloo.git",
-      :tag      => "v0.13.7",
-      :revision => "6f52c7c8afa0249c7887c0ed4376feb922db53aa"
-  head "https://github.com/solo-io/gloo.git"
+  version "0.13.12"
 
-  depends_on "dep" => :build
-  depends_on "go" => :build
-
-  def install
-    ENV["GOPATH"] = buildpath
-    dir = buildpath/"src/github.com/solo-io/gloo"
-    dir.install buildpath.children - [buildpath/".brew_home"]
-
-    cd dir do
-      system "dep", "ensure", "-vendor-only"
-      system "make", "glooctl", "TAGGED_VERSION=v#{version}"
-      bin.install "_output/glooctl"
-    end
+  if OS.mac?
+    url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-darwin-amd64"
+    sha256 "b872beb2658e99912fd7825e51f37cc15c7c7a20c2c6b1a4a61860ddb9fcdb17"
+  elsif OS.linux?
+    url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-linux-amd64"
+    sha256 "8dad04591ddd227f1d307b5c5f737bcdda8c5f24060730d19a739dc11fa146f3"
+  else
+    url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-windows-amd64.exe"
+    sha256 "6a7eb0c28434474b7627494ddcf6575fd01f5f780f2f83e9f0face22dfe43ee9"
   end
 
-  test do
-    run_output = shell_output("#{bin}/glooctl 2>&1")
-    assert_match "glooctl is the unified CLI for Gloo.", run_output
+  def install
+    if OS.mac?
+      File.rename "#{name}-darwin-amd64", name
+    elsif OS.linux?
+      File.rename "#{name}-linux-amd64", name
+    else
+      File.rename "#{name}-windows-amd64.exe", name
+    end
 
-    version_output = shell_output("#{bin}/glooctl --version 2>&1")
-    assert_match "glooctl community edition version #{version}", version_output
+    bin.install name
 
-    # Should error out as it needs access to a Kubernetes cluster to operate correctly
-    status_output = shell_output("#{bin}/glooctl get proxy 2>&1", 1)
-    assert_match "failed to create proxy client", status_output
+    # Install bash completion
+    output = Utils.popen_read("SHELL=bash #{bin}/#{name} completion bash")
+    (bash_completion/name.to_s).write output
+
+    # Install zsh completion
+    output = Utils.popen_read("SHELL=zsh #{bin}/#{name} completion zsh")
+    (zsh_completion/"_#{name}").write output
+
+    prefix.install_metafiles
   end
 end
