@@ -9,9 +9,6 @@ class Squashctl < Formula
   elsif OS.linux?
     url "https://github.com/solo-io/squash/releases/download/v#{version}/squashctl-linux"
     sha256 "4ba56ebbb074f3b96fabde92dd51319822b142353cac7fd5899de302b1cf0e8c"
-  else
-    url "https://github.com/solo-io/squash/releases/download/v#{version}/squashctl-windows.exe"
-    sha256 "0745ea5127ddb00df0d04f6d2d3673ebb1ae1383d828ebd6fbbf27539b219f74"
   end
 
   def install
@@ -19,8 +16,6 @@ class Squashctl < Formula
       File.rename "#{name}-darwin", name
     elsif OS.linux?
       File.rename "#{name}-linux", name
-    else
-      File.rename "#{name}-windows.exe", name
     end
 
     bin.install name

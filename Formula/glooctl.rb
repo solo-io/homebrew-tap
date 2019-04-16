@@ -9,9 +9,6 @@ class Glooctl < Formula
   elsif OS.linux?
     url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-linux-amd64"
     sha256 "9e173748ca85c5505909c4c7abe0cb03a58aef3b56dc134ece62d2306433347f"
-  else
-    url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-windows-amd64.exe"
-    sha256 "031434d831a394af2b7882b6f1a220e34efc91c4e4ef807a530fc8ec7990d2ca"
   end
 
   def install
@@ -19,8 +16,6 @@ class Glooctl < Formula
       File.rename "#{name}-darwin-amd64", name
     elsif OS.linux?
       File.rename "#{name}-linux-amd64", name
-    else
-      File.rename "#{name}-windows-amd64.exe", name
     end
 
     bin.install name

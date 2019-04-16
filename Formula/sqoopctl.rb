@@ -9,9 +9,6 @@ class Sqoopctl < Formula
   elsif OS.linux?
     url "https://github.com/solo-io/sqoop/releases/download/v#{version}/sqoopctl-linux-amd64"
     sha256 "2a23fbaf4281c40e2aa723da7d9b6446bb05e55f8fd0c216618378cf4e451691"
-  else
-    url "https://github.com/solo-io/sqoop/releases/download/v#{version}/sqoopctl-windows-amd64.exe"
-    sha256 "6a7559c1006bcdf28eb9b259b2b8ea6eb3c75fb0172b4272523a24415f2ea528"
   end
 
   def install
@@ -19,8 +16,6 @@ class Sqoopctl < Formula
       File.rename "#{name}-darwin-amd64", name
     elsif OS.linux?
       File.rename "#{name}-linux-amd64", name
-    else
-      File.rename "#{name}-windows-amd64.exe", name
     end
 
     bin.install name

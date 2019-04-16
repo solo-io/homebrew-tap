@@ -9,9 +9,6 @@ class Supergloo < Formula
   elsif OS.linux?
     url "https://github.com/solo-io/supergloo/releases/download/v#{version}/supergloo-cli-linux-amd64"
     sha256 "9280e5c61849c12a96f8bf7b601ef7fd15a5e3d5f06093727263acec8acbca31"
-  else
-    url "https://github.com/solo-io/supergloo/releases/download/v#{version}/supergloo-cli-windows-amd64.exe"
-    sha256 "6d4ee44345231421b65d8bfafe71844802f825ffb9e516aff7306fb3523d1705"
   end
 
   def install
@@ -19,8 +16,6 @@ class Supergloo < Formula
       File.rename "#{name}-cli-darwin-amd64", name
     elsif OS.linux?
       File.rename "#{name}-cli-linux-amd64", name
-    else
-      File.rename "#{name}-cli-windows-amd64.exe", name
     end
 
     bin.install name
