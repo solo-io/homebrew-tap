@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/scranton/homebrew-tap.svg?branch=master)](https://travis-ci.com/scranton/homebrew-tap)
+
 # solo-io/homebrew-tap
 This is the homebrew repo for installing the command line clients for Solo.io
 

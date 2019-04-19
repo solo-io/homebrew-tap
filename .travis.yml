@@ -1,0 +1,19 @@
+language: shell
+
+os:
+  - osx
+  - linux
+
+addons:
+  homebrew:
+    taps: solo-io/tap
+
+install:
+  - if [ $TRAVIS_OS_NAME = linux ]; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)" && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv); fi
+
+script:
+  - brew install solo-io/tap/{glooctl,squashctl,sqoopctl,supergloo}
+  - glooctl --version
+  - squashctl --version
+  - supergloo --version
+  - sqoopctl --version
