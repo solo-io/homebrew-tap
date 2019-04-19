@@ -4,6 +4,8 @@ os:
   - osx
   - linux
 
+osx_image: xcode10.2
+
 addons:
   homebrew:
     taps: solo-io/tap
