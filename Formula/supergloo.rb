@@ -1,14 +1,14 @@
 class Supergloo < Formula
   desc "The Service Mesh Orchestration Platform"
   homepage "https://supergloo.solo.io/"
-  version "0.3.12"
+  version "0.3.13"
 
   if OS.mac?
     url "https://github.com/solo-io/supergloo/releases/download/v#{version}/supergloo-cli-darwin-amd64"
-    sha256 "9934f5e4e84c6cf021fb479a5d55e2f88c8096300d6ede512a3c0b7e40760515"
+    sha256 "17369da2710d2bbd1a37a470f33b6e66621deb6379617ab22a00c1618fe1bbcf"
   elsif OS.linux?
     url "https://github.com/solo-io/supergloo/releases/download/v#{version}/supergloo-cli-linux-amd64"
-    sha256 "bd561747dd5c801a02ef54ea878657ce7a634798f3b62deec048f1c4aa7a13ae"
+    sha256 "3d6d014a5a27d4ef4a7234c4ef9837295671eb5a55736a3b70ec29d71a58e32e"
   end
 
   def install
