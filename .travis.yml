@@ -14,6 +14,8 @@ install:
   - if [ $TRAVIS_OS_NAME = linux ]; then sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)" && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv); fi
 
 script:
+  - brew tap solo-io/tap
+  - cp -r * $(brew --repo solo-io/tap)/
   - brew install solo-io/tap/{glooctl,squashctl,sqoopctl,supergloo}
   - glooctl --version
   - squashctl --version
