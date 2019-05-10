@@ -1,14 +1,14 @@
 class Squashctl < Formula
   desc "The debugger for microservices"
   homepage "https://squash.solo.io/"
-  version "0.5.13"
+  version "0.5.14"
 
   if OS.mac?
     url "https://github.com/solo-io/squash/releases/download/v#{version}/squashctl-darwin"
-    sha256 "b70c9572b6ce23d4ad45b152b1ad09baadada48fabd9e98ea38ed91d957309be"
+    sha256 "bbc4de963128b55f901d107d7798e461b8140195ffab291012cca2afd1d65c61"
   elsif OS.linux?
     url "https://github.com/solo-io/squash/releases/download/v#{version}/squashctl-linux"
-    sha256 "6d1fbb669c240712799de8129d4224c8219822c7349928c1a2f30da2c9624677"
+    sha256 "abdcbb6aa9ed9e1d1495f87496654d4799de68409cd78292b4a2da1087b30973"
   end
 
   def install
