@@ -1,14 +1,14 @@
 class Sqoopctl < Formula
   desc "The GraphQL Engine powered by Gloo"
   homepage "https://sqoop.solo.io/"
-  version "0.2.5"
+  version "0.2.6"
 
   if OS.mac?
     url "https://github.com/solo-io/sqoop/releases/download/v#{version}/sqoopctl-darwin-amd64"
-    sha256 "7dc0949d2c3d45eccb8bb9876001592716a141338606ceace2a0a3b5bbbfd01a"
+    sha256 "1fe412f50d475020a31f405813a9521e6fdb571109955bf771a3caac591a0f51"
   elsif OS.linux?
     url "https://github.com/solo-io/sqoop/releases/download/v#{version}/sqoopctl-linux-amd64"
-    sha256 "46639a28d233ffd15a85ec2b557bf6776de3ac1ced1930f3cb80bb49dcb6a949"
+    sha256 "86de980668888c22e8373f2bbc7b844464ffa1506d44f42b123639ce5f266ff9"
   end
 
   def install
