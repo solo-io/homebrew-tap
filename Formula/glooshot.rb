@@ -1,14 +1,14 @@
 class Glooshot < Formula
   desc "Chaos engineering framework to help you Immunize your service mesh"
   homepage "https://glooshot.solo.io"
-  version "0.0.4"
+  version "0.0.5"
 
   if OS.mac?
     url "https://github.com/solo-io/glooshot/releases/download/v#{version}/glooshot-darwin-amd64"
-    sha256 "fa76b87559ac9cefa342e9e9fc80d9a47b872ee2ecce8b36efefb9a76916c14f"
+    sha256 "1b13c5a559ad9395c93d23e7f6f734cdf4a9b6d468b20eeb8209fa171ef51569"
   elsif OS.linux?
     url "https://github.com/solo-io/glooshot/releases/download/v#{version}/glooshot-linux-amd64"
-    sha256 "b19dc3ee13f9113617253cd0bd9482be096ca8d7ad85b22806be6481389e9ab1"
+    sha256 "92d943e63910742e326e62f053d39b50ae250da124d522a0dec701ca6074503e"
   end
 
   def install
