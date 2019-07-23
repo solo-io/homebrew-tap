@@ -5,10 +5,10 @@ class Squashctl < Formula
 
   if OS.mac?
     url "https://github.com/solo-io/squash/releases/download/v#{version}/squashctl-darwin"
-    sha256 "1cc92c3a5471f97a6334fc746a7cd46e41dc716331b04df01c4073594fe05907"
+    sha256 "2df2335c0f935e86275569889d75f73a1309f746d790a8de04d28c05af35c4e8"
   elsif OS.linux?
     url "https://github.com/solo-io/squash/releases/download/v#{version}/squashctl-linux"
-    sha256 "9bc5b35234d0af28df9a1075cd6681abedb76e296cfaa95579346510040c9567"
+    sha256 "e68f25b1613eb6038b2725e247584426f6d40c634eb36f0bbacf737c0ce4ca24"
   end
 
   def install
