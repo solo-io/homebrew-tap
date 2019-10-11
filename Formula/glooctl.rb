@@ -5,10 +5,10 @@ class Glooctl < Formula
 
   if OS.mac?
     url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-darwin-amd64"
-    sha256 "fe45e1fe3cdefb6eedcd58b10be3b857be5ccca586992acdc3dc2ecb6b977439"
+    sha256 "922887a533aecdbcee574e4388ac5136409b7517c4c9b5229115adb2eac23ceb"
   elsif OS.linux?
     url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-linux-amd64"
-    sha256 "ec44e4b9b603ba5999c041b71961f0a15d32d800e21161e8f916eb3502c3e0c7"
+    sha256 "e82660b4b83766635a3ac0577a6fc35627eaf41d38dfc68b662734714f43e14d"
   end
 
   def install
