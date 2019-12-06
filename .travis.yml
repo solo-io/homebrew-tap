@@ -17,7 +17,7 @@ script:
   - brew tap solo-io/tap
   - cp -r * $(brew --repo solo-io/tap)/
   - brew install solo-io/tap/{glooctl,squashctl,sqoopctl,supergloo}
-  - glooctl --version
+  - glooctl version
   - squashctl --version
   - supergloo --version
   - sqoopctl --version
