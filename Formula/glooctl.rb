@@ -1,14 +1,14 @@
 class Glooctl < Formula
   desc "Envoy-Powered API Gateway"
   homepage "https://gloo.solo.io"
-  version "1.2.5"
+  version "1.2.6"
 
   if OS.mac?
     url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-darwin-amd64"
-    sha256 "9078543aedd7ea0261eb9006a2c572ff147f6580eda98ec289cc02a5eaf7cd1f"
+    sha256 "15743ac7bdbcdd4d9cfbcfed23afab20130c834742ed33a5acaa76671593f1c9"
   elsif OS.linux?
     url "https://github.com/solo-io/gloo/releases/download/v#{version}/glooctl-linux-amd64"
-    sha256 "e0c95917d108fca0bf89052a7cd5dfe34935d1f01488cf31040b0db9c68b26b0"
+    sha256 "93199f3565919cb56856bb7c92535356eb02495e0864689bee0147331829c427"
   end
 
   def install
